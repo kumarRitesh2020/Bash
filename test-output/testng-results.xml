@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-09-11T22:17:48 IST" name="Default suite" finished-at="2022-09-11T22:18:15 IST" duration-ms="27193">
+    <groups>
+    </groups>
+    <test started-at="2022-09-11T22:17:48 IST" name="Default test" finished-at="2022-09-11T22:18:15 IST" duration-ms="27193">
+      <class name="RiteshAutomation.First.First">
+        <test-method is-config="true" signature="classSetUp()[pri:0, instance:RiteshAutomation.First.First@4b0d79fc]" started-at="2022-09-11T22:17:48 IST" name="classSetUp" finished-at="2022-09-11T22:18:14 IST" duration-ms="26130" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- classSetUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:RiteshAutomation.First.First@4b0d79fc]" started-at="2022-09-11T22:18:14 IST" name="setUp" finished-at="2022-09-11T22:18:15 IST" duration-ms="774" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCaseLogin()[pri:0, instance:RiteshAutomation.First.First@4b0d79fc]" started-at="2022-09-11T22:18:15 IST" name="testCaseLogin" finished-at="2022-09-11T22:18:15 IST" duration-ms="13" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCaseLogin -->
+      </class> <!-- RiteshAutomation.First.First -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
