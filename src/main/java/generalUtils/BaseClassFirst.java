@@ -3,22 +3,24 @@ package generalUtils;
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import pageObjectRepo.HomeAndKitchenPage;
 import pageObjectRepo.LoginToActiPage;
 
 public class BaseClassFirst {
 	
 	private LoginToActiPage lp;
-	private WebDriver driver;
+	protected WebDriver driver;
 	private WebDriverUtils webDriverUtility;
 	private FileUtils fileUtility;
-	private ExcelFileUtils  excelUtility;
+	protected ExcelFileUtils  excelUtility;
 	private JavaUtils  javaUtility;
-	private int randomNumber;
-	private String un;
-	private String pwd;
+	protected HomeAndKitchenPage h;
+	
+	
 	 
 	 
 	 @BeforeClass
@@ -33,21 +35,22 @@ public class BaseClassFirst {
 		
 		
 		
+		
 		 String browser=fileUtility.getDataFromPropertyFile(CommonFileUtilPath.PROPERTY_DATA_FILE_PATH, "browser");
 		 String url=fileUtility.getDataFromPropertyFile(CommonFileUtilPath.PROPERTY_DATA_FILE_PATH,"url");
-	     un=fileUtility.getDataFromPropertyFile(CommonFileUtilPath.PROPERTY_DATA_FILE_PATH,"username");
-	      pwd=fileUtility.getDataFromPropertyFile(CommonFileUtilPath.PROPERTY_DATA_FILE_PATH,"password");
 	   	String timeouts=fileUtility.getDataFromPropertyFile(CommonFileUtilPath.PROPERTY_DATA_FILE_PATH,"timeout");
 		long longTimeout=(long) javaUtility.convertStringtoAnyDatatype(timeouts, DataTypesConversion.LONG);
-		randomNumber=javaUtility.getRandomNumber(1000);
 		  driver = webDriverUtility.openBrowserWithApplication(browser, longTimeout, url);
 		  webDriverUtility.jsInitialization(driver);
-		   lp=new LoginToActiPage(driver);
+		   
 	 }
 		   @BeforeMethod
-		   public void setUp() {
-		 //  lp.loginAction(fileUtility.getDataFromPropertyFile(CommonFileUtilPath.PROPERTY_DATA_FILE_PATH, "username"),fileUtility.getDataFromPropertyFile(CommonFileUtilPath.PROPERTY_DATA_FILE_PATH, "password"));
-		   lp.loginAction(un, pwd);
+		 public void setUp() {
+		 driver.get("url");
+		 ChromeOptions options=new ChromeOptions();
+		 options.addArguments("--disable-notifications");
+		 h=new HomeAndKitchenPage(driver);
+		 
 		   
 	 }
 }

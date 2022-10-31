@@ -11,6 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -148,6 +149,13 @@ public void navigateApplication(WebDriver driver,String url) {
 			}
 			
 			
+			
+		}
+		
+		public void chromeNotifications() {
+			ChromeOptions options=new ChromeOptions();
+			options.addArguments("--disable-notifications");
+			WebDriver driver=new ChromeDriver(options);
 			
 		}
 		

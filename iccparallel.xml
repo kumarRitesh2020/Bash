@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite  name="Suite" parallel="tests" thread-count="2">
+  <test name="Test runner 1">
+  <parameter name="BROWSER" value="chrome"></parameter>
+    <classes>
+      <class name="RiteshAutomation.First.IccMouseHover"/>
+    </classes>
+  </test> <!-- Test -->
+   <test name="Test runner firefox">
+   <parameter name="BROWSER" value="firefox"></parameter>
+    <classes>
+      <class name="RiteshAutomation.First.Icc"/>
+      </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
